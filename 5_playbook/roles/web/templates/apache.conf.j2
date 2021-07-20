@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+   ServerAdmin webmaster@localhost
+   ServerName 10.1.0.10
+   DocumentRoot /var/www/
+   ErrorLog ${APACHE_LOG_DIR}/error.log
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+   <IfModule mod_dir.c>
+       DirectoryIndex index.php index.html index.cgi index.pl  index.xhtml index.htm
+   </IfModule>
+
+</VirtualHost>

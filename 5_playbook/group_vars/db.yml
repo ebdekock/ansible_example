@@ -1,0 +1,7 @@
+mysql_databases: [ 
+  { name: foodb }
+]
+
+mysql_users: [
+  { name: foouser, password: abc, host: '%', priv: "foodb.*:ALL" }
+]

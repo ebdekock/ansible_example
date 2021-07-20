@@ -1,0 +1,15 @@
+localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3
+
+[web]
+web1 ansible_host=10.1.0.10 ansible_user=vagrant web_version=90
+web2 ansible_host=10.1.0.11 ansible_user=vagrant web_version=90
+
+[mysql]
+mysql1 ansible_host=10.1.0.13 ansible_user=vagrant
+
+[psql]
+psql1 ansible_host=10.1.0.14 ansible_user=vagrant
+
+[db:children]
+mysql
+psql

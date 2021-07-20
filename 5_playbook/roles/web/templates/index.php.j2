@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <title>Ansible Application</title>
+ </head>
+ <body>
+<?php 
+ Print "Hello, World! <br> I am a web server configured using Ansible and I am : ";
+ echo exec('hostname');
+ Print  "</br>";
+echo  "<br>List of Databases: </BR>";
+        {% for host in groups['db'] %}
+                $link = mysqli_connect('10.1.0.12', 'foouser', 'abc') or die(mysqli_connect_error($link));
+        {% endfor %}
+        $res = mysqli_query($link, "SHOW DATABASES;");
+        while ($row = mysqli_fetch_assoc($res)) {
+                echo $row['Database'] . "\n\n";
+        }
+?>
+</body>
+</html>

@@ -1,0 +1,9 @@
+- name: Creates the index.php file
+  template:
+    src: index.php.j2
+    dest: /var/www/html/index.php
+
+- name: Remove default file
+  file:
+    dest: /var/www/html/index.html
+    state: absent

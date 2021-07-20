@@ -1,0 +1,19 @@
+- name: Install http and php etc
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+   - apache2
+   - php
+   - php-mysql
+
+- name: Set up Apache virtualhost
+  template:
+    src: "apache.conf.j2"
+    dest: "/etc/apache2/sites-available/local.conf"
+
+- name: http service state
+  service:
+    name: apache2
+    state: restarted
+    enabled: yes

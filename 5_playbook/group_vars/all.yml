@@ -1,0 +1,4 @@
+httpd_port: 80
+ntpserver1: 0.ubuntu.pool.ntp.org
+ntpserver2: 1.ubuntu.pool.ntp.org
+ntpserver3: 2.ubuntu.pool.ntp.org

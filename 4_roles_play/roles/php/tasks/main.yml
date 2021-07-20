@@ -1,0 +1,15 @@
+- name: Install PHP Dependencies
+  ansible.builtin.debug:
+    msg: "Installed all PHP deps"
+
+- name: Installing PHP
+  ansible.builtin.file:
+    state: touch
+    path: /home/vagrant/php-{{ php_version }}
+    owner: vagrant
+    group: vagrant
+    mode: '0644'
+
+- name: Installing PHP
+  ansible.builtin.debug:
+    msg: "Installed PHP version: {{ php_version }}"

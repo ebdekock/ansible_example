@@ -1,0 +1,21 @@
+- name: apply common configuration to all nodes
+  hosts: all
+  remote_user: vagrant
+  become: yes
+  roles:
+    - common
+
+- name: deploy MySQL and configure the databases
+  gather_facts: yes
+  hosts: db
+  remote_user: vagrant
+  become: yes
+  roles:
+    - geerlingguy.mysql
+
+- name: configure and deploy the webservers and application code
+  hosts: web
+  remote_user: vagrant
+  become: yes
+  roles:
+    - web
